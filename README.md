@@ -1,6 +1,6 @@
 # entrecruce
 
-<b>Niltse, Shital</b>, gracias por ser parte del taller 'live coding, sinestesia e intuición' organizado por <b>Live Code Mad</b> en el <b>MediaLab Prado</b>.- Los siguientes archivos nos ayudarán a programar al-vuelo, conversando con Processing, a través de mensajes OSC escritos en TidalCycles.- 
+<b>Shitalsha nuutu'</b>, gracias por ser parte del taller 'live coding, sinestesia e intuición' organizado por <b>Live Code Mad</b> en el <b>MediaLab Prado</b>.- Los siguientes archivos nos ayudarán a programar al-vuelo, conversando con Processing, a través de mensajes OSC escritos en TidalCycles.- 
 
 <b>s2hs2</b> es el nombre de ésta interfaz escrita en 2014 - 2015 por <b>Alex McLean</b> y <b>Rodrigo Velasco</b>, se trata de un proyecto en desarrollo que ha sido creado con fines expresivos, para celebrar el error y la improvisación, de manera que el código se encuentra siempre ligado a su origen intuitivo.
 
