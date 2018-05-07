@@ -16,6 +16,6 @@ También debes descargar <b>Processing</b>
 
 - https://processing.org/download/
 
-*
+´
 
 <b>Agradecimiento especial a Jesús Jara López.</b>
