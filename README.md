@@ -11,3 +11,7 @@ Finalmente para utilizar la interfaz, necesitas instalar TidalCycles, proceso qu
 - https://tidalcycles.org/getting_started.html
 
 * En éste taller en específico solo necesitamos instalar <b>Atom, Haskell y Git</b> (no es necesario instalar SuperCollider durante éste taller, hazlo al llegar a casa, de manera que podemos aprovechar el taller al máximo).
+
+-
+
+Agradecimiento especial a Jesús Jara López.
