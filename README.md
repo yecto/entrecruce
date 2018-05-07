@@ -2,7 +2,7 @@
 
 Hola, gracias por ser parte del taller de 'live coding, sinestesia e intuición' organizado por <b>Live Code Mad en MediaLab Prado</b>.- Los siguientes archivos nos ayudarán a programar al-vuelo, conversando con Processing, a través de mensajes OSC escritos en TidalCycles.- 
 
-'s2hs2' es el nombre de ésta interfaz escrita en 2014 - 2015 por <b>Alex McLean y Rodrigo Velasco</b>, se trata de un proyecto en desarrollo que ha sido creado con fines expresivos, poéticos y sensibles, de manera que el código se encuentra siempre ligado a su origen intuitivo.
+'s2hs2' es el nombre de ésta interfaz escrita en 2014 - 2015 por <b>Alex McLean y Rodrigo Velasco</b>, se trata de un proyecto en desarrollo que ha sido creado con fines expresivos, de manera que el código se encuentra siempre ligado a su origen intuitivo.
 
 + https://yecto.github.io/esedos.html
 
