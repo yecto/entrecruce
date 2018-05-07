@@ -1,0 +1,118 @@
+-- s2hs2
+-- https://yecto.github.io/esedos.html
+
+import Sound.Tidal.OscStream
+
+let poetry = Shape {
+      params = [ S "word" Nothing,
+                 F "r" (Just 0),
+                 F "g" (Just 1),
+                 F "b" (Just 0.5),
+                 F "rotation" (Just 0),
+                 F "distance" (Just 10),
+                 I "life" (Just 20),
+                 F "x" (Just 0.5),
+                 F "y" (Just 0.5),
+                 I "str" (Just 5)
+               ],
+      cpsStamp = False,
+      latency = 0
+      }
+    poetrySlang = OscSlang {path = "/note",
+                            timestamp = NoStamp,
+                            namedParams = False,
+                            preamble = []
+                           }
+    poetryStream = do
+      s <- makeConnection "127.0.0.1" 8010 poetrySlang
+      stream (Backend s $ (\_ _ _ -> return ())) poetry
+    word         = makeS poetry "word"
+    r            = makeF poetry "r"
+    g            = makeF poetry "g"
+    b            = makeF poetry "b"
+    rotation     = makeF poetry "rotation"
+    distance     = makeF poetry "distance"
+    life         = makeI poetry "life"
+    x            = makeF poetry "x"
+    y            = makeF poetry "y"
+    str          = makeI poetry "str"
+
+
+p1 <- poetryStream
+
+p2 <- poetryStream
+
+p1 silence
+p2 silence
+
+let hush = mapM_ ($ silence) [p1, p2]
+
+let solo = (>>) hush
+
+-- aquí hay algunas exploraciones
+-- para enviar patrones a Processing.-
+
+p1 $ word "a"
+   # x "0.5"
+   # y "0.5"
+   # life "12"
+   # r "0"
+   # g (slow 2 $ scale 0 255 sine)
+   # b "155"
+
+p1 $ every 2 (# word "a") $ word "b"
+    # x "0.5"
+    # y (slow 30 $ scale 0.1 0.9 sine)
+    # rotation "20"
+    # distance (slow 4 $ scale 0 140 sine)
+    # life "202"
+    # r (slow 40 $ scale 0 255 rand)
+    # g (slow 40 $ scale 0 255 rand)
+    # b (slow 40 $ scale 0 255 rand)
+
+-- un stack o grupo de patrones.-
+
+p1 $ every 2 (# word "b")
+   $ stack [
+     word "a"
+     # x "0.5"
+     # y (slow 30 $ scale 0.1 0.9 sine),
+     word "a"
+     # x (slow 30 $ scale 0.1 0.9 sine)
+     # y "0.5",
+     word "a"
+     # x (slow 30 $ scale 0.1 0.9 sine)
+     # y (slow 30 $ scale 0.1 0.9 sine),
+     word "a"
+     # x (slow 30 $ scale 0.1 0.9 sine)
+     # y (slow 30 $ scale 0.9 0.1 sine)
+]
+     # rotation (slow 20 $ scale 20 200 sine)
+     # distance (slow 4 $ scale 0 140 sine)
+     # life "202"
+     # r (slow 4 $ scale 0 255 rand)
+     # g (slow 4 $ scale 0 255 sine)
+     # b (slow 20 $ scale 0 255 rand)
+
+p1 silence
+
+-- jugar con 'c y d'
+
+p1 $ word "d"
+      # x "0"
+      # y (slow 20 $ scale 0 1 rand)
+      # life "102"
+      # r (slow 4 $ scale 0 255 rand)
+      # g (slow 4 $ scale 0 255 sine)
+      # b (slow 20 $ scale 0 255 rand)
+
+-- jugar con 'e y f'
+
+p1 $ word "f"
+   # x "0.125"
+   # y "0.125"
+   # life "12"
+   # r (slow 4 $ scale 0 255 rand)
+   # g (slow 4 $ scale 0 255 sine)
+   # b (slow 20 $ scale 0 255 rand)
+   # str "70"
